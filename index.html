@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestión de Empleados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    input, button {
+      margin: 5px 0;
+      padding: 8px;
+      width: 100%;
+    }
+    #output {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Empleados</h1>
+
+  <h3>Agregar Empleado</h3>
+  <input type="text" id="nombre" placeholder="Nombre del empleado" />
+  <input type="number" id="salario" placeholder="Salario del empleado" />
+  <button onclick="agregarEmpleado()">Agregar</button>
+
+  <h3>Buscar Empleado</h3>
+  <input type="text" id="buscarNombre" placeholder="Nombre a buscar" />
+  <button onclick="buscarEmpleado()">Buscar</button>
+
+  <h3>Calcular Salario Promedio</h3>
+  <button onclick="calcularPromedio()">Calcular</button>
+
+  <div id="output"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

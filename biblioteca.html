@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Biblioteca</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      margin: 5px;
+    }
+    .libro {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Biblioteca</h1>
+
+  <h3>Agregar Libro</h3>
+  <input type="text" id="titulo" placeholder="Título">
+  <input type="text" id="autor" placeholder="Autor">
+  <input type="number" id="anio" placeholder="Año">
+  <button onclick="agregarLibro()">Agregar</button>
+
+  <h3>Buscar Libro</h3>
+  <input type="text" id="busqueda" placeholder="Buscar por título">
+  <button onclick="buscarLibro()">Buscar</button>
+
+  <h3>Libros en la Biblioteca</h3>
+  <div id="listaLibros"></div>
+
+  <script>
+    // Datos precargados
+    const biblioteca = [
+      { titulo: "Cien años de soledad", autor: "Gabriel García Márquez", anio: 1967 },
+      { titulo: "1984", autor: "George Orwell", anio: 1949 },
+      { titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes", anio: 1605 }
+    ];
+
+    function mostrarLibros(libros = biblioteca) {
+      const lista = document.getElementById("listaLibros");
+      lista.innerHTML = "";
+
+      if (libros.length === 0) {
+        lista.innerHTML = "<p>No hay libros para mostrar.</p>";
+        return;
+      }
+
+      libros.forEach((libro, i) => {
+        const item = document.createElement("div");
+        item.className = "libro";
+        item.textContent = `${i + 1}. "${libro.titulo}" por ${libro.autor} (${libro.anio})`;
+        lista.appendChild(item);
+      });
+    }
+
+    function agregarLibro() {
+      const titulo = document.getElementById("titulo").value;
+      const autor = document.getElementById("autor").value;
+      const anio = parseInt(document.getElementById("anio").value);
+
+      if (!titulo || !autor || isNaN(anio)) {
+        alert("Por favor llena todos los campos correctamente.");
+        return;
+      }
+
+      biblioteca.push({ titulo, autor, anio });
+      mostrarLibros();
+      document.getElementById("titulo").value = "";
+      document.getElementById("autor").value = "";
+      document.getElementById("anio").value = "";
+    }
+
+    function buscarLibro() {
+      const texto = document.getElementById("busqueda").value.toLowerCase();
+      const resultados = biblioteca.filter(libro => libro.titulo.toLowerCase().includes(texto));
+      mostrarLibros(resultados);
+    }
+
+    // Mostrar libros al cargar
+    mostrarLibros();
+  </script>
+</body>
+</html>

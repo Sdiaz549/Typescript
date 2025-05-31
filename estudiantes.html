@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Estudiantes</title>
+</head>
+<body>
+  <h1>Sistema de Gestión de Estudiantes</h1>
+
+  <section>
+    <h2>Agregar Estudiante</h2>
+    <input id="student-name" type="text" placeholder="Nombre del estudiante" />
+    <input id="student-grade" type="number" placeholder="Nota (0-10)" />
+    <button onclick="addStudent()">Agregar</button>
+  </section>
+
+  <section>
+    <h2>Buscar Estudiante</h2>
+    <input id="search-student" type="text" placeholder="Buscar por nombre" />
+    <button onclick="searchStudent()">Buscar</button>
+    <div id="search-result"></div>
+  </section>
+
+  <section>
+    <h2>Promedio de Notas</h2>
+    <button onclick="calculateAverage()">Calcular promedio</button>
+    <p id="average-grade"></p>
+  </section>
+
+  <script src="estudiantes.js"></script>
+</body>
+</html>

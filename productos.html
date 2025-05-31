@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Productos</title>
+</head>
+<body>
+  <h1>Sistema de Gestión de Productos</h1>
+
+  <section>
+    <h2>Agregar Producto</h2>
+    <input id="product-name" type="text" placeholder="Nombre del producto" />
+    <input id="product-price" type="number" placeholder="Precio" />
+    <input id="product-quantity" type="number" placeholder="Cantidad" />
+    <button onclick="addProduct()">Agregar</button>
+  </section>
+
+  <section>
+    <h2>Buscar Producto</h2>
+    <input id="search-name" type="text" placeholder="Buscar por nombre" />
+    <button onclick="searchProduct()">Buscar</button>
+    <div id="search-result"></div>
+  </section>
+
+  <section>
+    <h2>Inventario</h2>
+    <button onclick="calculateInventory()">Calcular valor total</button>
+    <p id="inventory-value"></p>
+  </section>
+
+  <script src="productos.js"></script>
+</body>
+</html>

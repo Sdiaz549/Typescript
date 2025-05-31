@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Reservas de Hotel</title>
+</head>
+<body>
+  <h1>Sistema de Gestión de Reservas de Hotel</h1>
+
+  <section>
+    <h2>Agregar Reserva</h2>
+    <input id="guest-name" type="text" placeholder="Nombre del huésped" />
+    <input id="nights" type="number" placeholder="Noches de estancia" />
+    <input id="price-per-night" type="number" placeholder="Precio por noche" />
+    <button onclick="addReservation()">Agregar Reserva</button>
+  </section>
+
+  <section>
+    <h2>Buscar Reserva</h2>
+    <input id="search-guest" type="text" placeholder="Buscar por nombre del huésped" />
+    <button onclick="searchReservation()">Buscar</button>
+    <div id="search-result"></div>
+  </section>
+
+  <section>
+    <h2>Ingresos del Hotel</h2>
+    <button onclick="calculateTotalIncome()">Calcular ingreso total</button>
+    <p id="total-income"></p>
+  </section>
+
+  <script src="reservas.js"></script>
+</body>
+</html>
